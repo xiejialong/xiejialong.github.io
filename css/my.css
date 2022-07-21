@@ -1,0 +1,94 @@
+/* Here is your custom css styles. */
+pre {
+    background-color: #263238 !important;
+}
+
+.intro-borad{
+    border: 1px solid rgb(232, 232, 232);
+    border-radius: 5px;
+    background:rgb(243 243 243);
+    box-shadow: 0 3px 8px 6px rgba(7,17,27,0.05);
+    transition: all .3s;
+}
+
+.intro-title{
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    padding-left: 10.5px;
+}
+
+@media only screen and (max-width: 992px){
+    header .brand-logo {
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+
+nav .my-brand-logo.right{right:0.5rem;left:auto}
+nav .my-brand-logo.right{right:0.5rem;padding:0}
+nav .my-brand-logo i,nav .my-brand-logo [class^="mdi-"],nav .my-brand-logo [class*="mdi-"],nav .my-brand-logo i.material-icons{float:left;margin-right:15px}
+
+header .my-brand-logo .logo-img {
+    height: 40px;
+    vertical-align: middle;
+    padding-bottom: 6px;
+}
+
+header .my-brand-logo .logo-span {
+    font-size: 1.6rem;
+}
+
+.scroll-mains {
+    width: 100%;
+    padding-left: 15px;
+    margin: 0 auto;
+}
+.scroll-div {
+    width: 100%;
+    height: 100%;
+    float: left;
+    margin: 0 5px 5px 0px;
+}
+
+.scroll-li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.scroll-li .research-img{
+    padding: 0 5px 0 5px;
+    overflow: hidden;
+    height: 200px;
+}
+
+
+.scroll-li .text-center{
+    margin-bottom: 10px;
+    display: block;
+    padding: 0 5px 0 5px;
+    text-align: center;
+}
+
+.lab-name{
+    color: #891515;
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.1rem;
+}
+
+
+.peoples-container {
+    margin-top: -60px;
+    margin-bottom: 30px;
+}
+
+.tag-title {
+    margin: 10px auto;
+    color: #3C4858;
+    font-size: 1.75rem;
+    font-weight: 800;
+}
