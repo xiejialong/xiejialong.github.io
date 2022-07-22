@@ -3,11 +3,11 @@
   <title>云基智能机器人实验室</title>
   
   <subtitle>云基智能机器人实验室</subtitle>
-  <link href="https://blinkfox.github.io/atom.xml" rel="self"/>
+  <link href="https://cirobot.github.io/atom.xml" rel="self"/>
   
-  <link href="https://blinkfox.github.io/"/>
+  <link href="https://cirobot.github.io/"/>
   <updated>2022-06-18T16:01:43.835Z</updated>
-  <id>https://blinkfox.github.io/</id>
+  <id>https://cirobot.github.io/</id>
   
   <author>
     <name>云基智能机器人实验室</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>祝贺顾潘龙同学荣获2021年度校长奖学金</title>
-    <link href="https://blinkfox.github.io/2021/12/03/news/zhu-he-gu-pan-long-tong-xue-rong-huo-2021-nian-du-xiao-chang-jiang-xue-jin/"/>
-    <id>https://blinkfox.github.io/2021/12/03/news/zhu-he-gu-pan-long-tong-xue-rong-huo-2021-nian-du-xiao-chang-jiang-xue-jin/</id>
+    <link href="https://cirobot.github.io/2021/12/03/news/zhu-he-gu-pan-long-tong-xue-rong-huo-2021-nian-du-xiao-chang-jiang-xue-jin/"/>
+    <id>https://cirobot.github.io/2021/12/03/news/zhu-he-gu-pan-long-tong-xue-rong-huo-2021-nian-du-xiao-chang-jiang-xue-jin/</id>
     <published>2021-12-03T03:51:00.000Z</published>
     <updated>2022-06-18T16:01:43.835Z</updated>
     
@@ -35,15 +35,15 @@
     
     
     
-    <category term="CIR新闻" scheme="https://blinkfox.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
+    <category term="CIR新闻" scheme="https://cirobot.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>祝贺顾潘龙和缪昭明两位同学获得2021年度国家奖学金</title>
-    <link href="https://blinkfox.github.io/2021/12/02/news/zhu-he-gu-pan-long-he-mou-zhao-ming-liang-wei-tong-xue-huo-de-2021-nian-du-guo-jia-jiang-xue-jin/"/>
-    <id>https://blinkfox.github.io/2021/12/02/news/zhu-he-gu-pan-long-he-mou-zhao-ming-liang-wei-tong-xue-huo-de-2021-nian-du-guo-jia-jiang-xue-jin/</id>
+    <link href="https://cirobot.github.io/2021/12/02/news/zhu-he-gu-pan-long-he-mou-zhao-ming-liang-wei-tong-xue-huo-de-2021-nian-du-guo-jia-jiang-xue-jin/"/>
+    <id>https://cirobot.github.io/2021/12/02/news/zhu-he-gu-pan-long-he-mou-zhao-ming-liang-wei-tong-xue-huo-de-2021-nian-du-guo-jia-jiang-xue-jin/</id>
     <published>2021-12-02T08:09:00.000Z</published>
     <updated>2022-06-18T16:01:43.835Z</updated>
     
@@ -59,15 +59,15 @@
     
     
     
-    <category term="CIR新闻" scheme="https://blinkfox.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
+    <category term="CIR新闻" scheme="https://cirobot.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>王国祥</title>
-    <link href="https://blinkfox.github.io/2021/09/14/members/students/wang-guo-xiang/"/>
-    <id>https://blinkfox.github.io/2021/09/14/members/students/wang-guo-xiang/</id>
+    <link href="https://cirobot.github.io/2021/09/14/members/students/wang-guo-xiang/"/>
+    <id>https://cirobot.github.io/2021/09/14/members/students/wang-guo-xiang/</id>
     <published>2021-09-14T04:58:00.000Z</published>
     <updated>2022-06-18T16:01:43.820Z</updated>
     
@@ -82,17 +82,17 @@
     
     
     
-    <category term="实验室团队" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
+    <category term="实验室团队" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
     
-    <category term="硕士生队伍" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%A3%AB%E7%94%9F%E9%98%9F%E4%BC%8D/"/>
+    <category term="硕士生队伍" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%A3%AB%E7%94%9F%E9%98%9F%E4%BC%8D/"/>
     
     
   </entry>
   
   <entry>
     <title>王敏鑫</title>
-    <link href="https://blinkfox.github.io/2021/09/14/members/students/wang-min-xin/"/>
-    <id>https://blinkfox.github.io/2021/09/14/members/students/wang-min-xin/</id>
+    <link href="https://cirobot.github.io/2021/09/14/members/students/wang-min-xin/"/>
+    <id>https://cirobot.github.io/2021/09/14/members/students/wang-min-xin/</id>
     <published>2021-09-14T04:58:00.000Z</published>
     <updated>2022-06-18T16:01:43.820Z</updated>
     
@@ -107,17 +107,17 @@
     
     
     
-    <category term="实验室团队" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
+    <category term="实验室团队" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
     
-    <category term="硕士生队伍" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%A3%AB%E7%94%9F%E9%98%9F%E4%BC%8D/"/>
+    <category term="硕士生队伍" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%A3%AB%E7%94%9F%E9%98%9F%E4%BC%8D/"/>
     
     
   </entry>
   
   <entry>
     <title>侯秉伸</title>
-    <link href="https://blinkfox.github.io/2021/09/14/members/students/hou-bing-shen/"/>
-    <id>https://blinkfox.github.io/2021/09/14/members/students/hou-bing-shen/</id>
+    <link href="https://cirobot.github.io/2021/09/14/members/students/hou-bing-shen/"/>
+    <id>https://cirobot.github.io/2021/09/14/members/students/hou-bing-shen/</id>
     <published>2021-09-14T04:57:00.000Z</published>
     <updated>2022-06-18T16:01:43.820Z</updated>
     
@@ -132,17 +132,17 @@
     
     
     
-    <category term="实验室团队" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
+    <category term="实验室团队" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
     
-    <category term="硕士生队伍" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%A3%AB%E7%94%9F%E9%98%9F%E4%BC%8D/"/>
+    <category term="硕士生队伍" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%A3%AB%E7%94%9F%E9%98%9F%E4%BC%8D/"/>
     
     
   </entry>
   
   <entry>
     <title>范崇峰</title>
-    <link href="https://blinkfox.github.io/2021/09/14/members/students/fan-chong-feng/"/>
-    <id>https://blinkfox.github.io/2021/09/14/members/students/fan-chong-feng/</id>
+    <link href="https://cirobot.github.io/2021/09/14/members/students/fan-chong-feng/"/>
+    <id>https://cirobot.github.io/2021/09/14/members/students/fan-chong-feng/</id>
     <published>2021-09-14T04:56:00.000Z</published>
     <updated>2022-06-18T16:01:43.820Z</updated>
     
@@ -157,17 +157,17 @@
     
     
     
-    <category term="实验室团队" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
+    <category term="实验室团队" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
     
-    <category term="硕士生队伍" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%A3%AB%E7%94%9F%E9%98%9F%E4%BC%8D/"/>
+    <category term="硕士生队伍" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%A3%AB%E7%94%9F%E9%98%9F%E4%BC%8D/"/>
     
     
   </entry>
   
   <entry>
     <title>陈建业</title>
-    <link href="https://blinkfox.github.io/2021/09/14/members/students/chen-jian-ye/"/>
-    <id>https://blinkfox.github.io/2021/09/14/members/students/chen-jian-ye/</id>
+    <link href="https://cirobot.github.io/2021/09/14/members/students/chen-jian-ye/"/>
+    <id>https://cirobot.github.io/2021/09/14/members/students/chen-jian-ye/</id>
     <published>2021-09-14T04:53:00.000Z</published>
     <updated>2022-06-18T16:01:43.820Z</updated>
     
@@ -182,17 +182,17 @@
     
     
     
-    <category term="实验室团队" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
+    <category term="实验室团队" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
     
-    <category term="硕士生队伍" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%A3%AB%E7%94%9F%E9%98%9F%E4%BC%8D/"/>
+    <category term="硕士生队伍" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%A3%AB%E7%94%9F%E9%98%9F%E4%BC%8D/"/>
     
     
   </entry>
   
   <entry>
     <title>一金一银，实验室在第七届山东省“互联网+”大赛中再创佳绩</title>
-    <link href="https://blinkfox.github.io/2021/08/02/news/yi-jin-yi-yin-shi-yan-shi-zai-di-qi-jie-shan-dong-sheng-hu-lian-wang-da-sai-zhong-zai-chuang-jia-ji/"/>
-    <id>https://blinkfox.github.io/2021/08/02/news/yi-jin-yi-yin-shi-yan-shi-zai-di-qi-jie-shan-dong-sheng-hu-lian-wang-da-sai-zhong-zai-chuang-jia-ji/</id>
+    <link href="https://cirobot.github.io/2021/08/02/news/yi-jin-yi-yin-shi-yan-shi-zai-di-qi-jie-shan-dong-sheng-hu-lian-wang-da-sai-zhong-zai-chuang-jia-ji/"/>
+    <id>https://cirobot.github.io/2021/08/02/news/yi-jin-yi-yin-shi-yan-shi-zai-di-qi-jie-shan-dong-sheng-hu-lian-wang-da-sai-zhong-zai-chuang-jia-ji/</id>
     <published>2021-08-02T11:59:00.000Z</published>
     <updated>2022-06-18T16:01:43.835Z</updated>
     
@@ -208,15 +208,15 @@
     
     
     
-    <category term="CIR新闻" scheme="https://blinkfox.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
+    <category term="CIR新闻" scheme="https://cirobot.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>博士生刘美珍的论文被一区TOP期刊《Knowledge-Based Systems》在线发表</title>
-    <link href="https://blinkfox.github.io/2021/01/29/news/bo-shi-sheng-liu-mei-zhen-de-lun-wen-bei-yi-qu-top-qi-kan-knowledge-based-systems-zai-xian-fa-biao/"/>
-    <id>https://blinkfox.github.io/2021/01/29/news/bo-shi-sheng-liu-mei-zhen-de-lun-wen-bei-yi-qu-top-qi-kan-knowledge-based-systems-zai-xian-fa-biao/</id>
+    <link href="https://cirobot.github.io/2021/01/29/news/bo-shi-sheng-liu-mei-zhen-de-lun-wen-bei-yi-qu-top-qi-kan-knowledge-based-systems-zai-xian-fa-biao/"/>
+    <id>https://cirobot.github.io/2021/01/29/news/bo-shi-sheng-liu-mei-zhen-de-lun-wen-bei-yi-qu-top-qi-kan-knowledge-based-systems-zai-xian-fa-biao/</id>
     <published>2021-01-29T13:17:00.000Z</published>
     <updated>2022-06-18T16:01:43.820Z</updated>
     
@@ -231,15 +231,15 @@
     
     
     
-    <category term="CIR新闻" scheme="https://blinkfox.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
+    <category term="CIR新闻" scheme="https://cirobot.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>课题组论文被顶级期刊《IEEE Transactions on Cybernetics》在线发表</title>
-    <link href="https://blinkfox.github.io/2020/12/31/news/ke-ti-zu-lun-wen-bei-ding-ji-qi-kan-ieee-transactions-on-cybernetics-zai-xian-fa-biao/"/>
-    <id>https://blinkfox.github.io/2020/12/31/news/ke-ti-zu-lun-wen-bei-ding-ji-qi-kan-ieee-transactions-on-cybernetics-zai-xian-fa-biao/</id>
+    <link href="https://cirobot.github.io/2020/12/31/news/ke-ti-zu-lun-wen-bei-ding-ji-qi-kan-ieee-transactions-on-cybernetics-zai-xian-fa-biao/"/>
+    <id>https://cirobot.github.io/2020/12/31/news/ke-ti-zu-lun-wen-bei-ding-ji-qi-kan-ieee-transactions-on-cybernetics-zai-xian-fa-biao/</id>
     <published>2020-12-31T11:17:00.000Z</published>
     <updated>2022-06-18T16:01:43.820Z</updated>
     
@@ -254,15 +254,15 @@
     
     
     
-    <category term="CIR新闻" scheme="https://blinkfox.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
+    <category term="CIR新闻" scheme="https://cirobot.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>祝贺博士生陈科同学获得2020年山东大学研究生学术之星提名奖</title>
-    <link href="https://blinkfox.github.io/2020/12/10/news/zhu-he-bo-shi-sheng-chen-ke-tong-xue-huo-de-2020-nian-shan-dong-da-xue-yan-jiu-sheng-xue-zhu-zhi-xing-ti-ming-jiang/"/>
-    <id>https://blinkfox.github.io/2020/12/10/news/zhu-he-bo-shi-sheng-chen-ke-tong-xue-huo-de-2020-nian-shan-dong-da-xue-yan-jiu-sheng-xue-zhu-zhi-xing-ti-ming-jiang/</id>
+    <link href="https://cirobot.github.io/2020/12/10/news/zhu-he-bo-shi-sheng-chen-ke-tong-xue-huo-de-2020-nian-shan-dong-da-xue-yan-jiu-sheng-xue-zhu-zhi-xing-ti-ming-jiang/"/>
+    <id>https://cirobot.github.io/2020/12/10/news/zhu-he-bo-shi-sheng-chen-ke-tong-xue-huo-de-2020-nian-shan-dong-da-xue-yan-jiu-sheng-xue-zhu-zhi-xing-ti-ming-jiang/</id>
     <published>2020-12-10T14:36:00.000Z</published>
     <updated>2022-06-18T16:01:43.804Z</updated>
     
@@ -277,15 +277,15 @@
     
     
     
-    <category term="CIR新闻" scheme="https://blinkfox.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
+    <category term="CIR新闻" scheme="https://cirobot.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>实验室获第十二届“挑战杯”中国大学生创业计划山东省金奖、全国铜奖</title>
-    <link href="https://blinkfox.github.io/2020/12/09/news/shi-yan-shi-huo-di-shi-er-jie-tiao-zhan-bei-zhong-guo-da-xue-sheng-chuang-ye-ji-hua-shan-dong-sheng-jin-jiang-quan-guo-tong-jiang/"/>
-    <id>https://blinkfox.github.io/2020/12/09/news/shi-yan-shi-huo-di-shi-er-jie-tiao-zhan-bei-zhong-guo-da-xue-sheng-chuang-ye-ji-hua-shan-dong-sheng-jin-jiang-quan-guo-tong-jiang/</id>
+    <link href="https://cirobot.github.io/2020/12/09/news/shi-yan-shi-huo-di-shi-er-jie-tiao-zhan-bei-zhong-guo-da-xue-sheng-chuang-ye-ji-hua-shan-dong-sheng-jin-jiang-quan-guo-tong-jiang/"/>
+    <id>https://cirobot.github.io/2020/12/09/news/shi-yan-shi-huo-di-shi-er-jie-tiao-zhan-bei-zhong-guo-da-xue-sheng-chuang-ye-ji-hua-shan-dong-sheng-jin-jiang-quan-guo-tong-jiang/</id>
     <published>2020-12-09T04:20:00.000Z</published>
     <updated>2022-06-18T16:01:43.835Z</updated>
     
@@ -301,15 +301,15 @@
     
     
     
-    <category term="CIR新闻" scheme="https://blinkfox.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
+    <category term="CIR新闻" scheme="https://cirobot.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>祝贺博士生陈科和硕士生顾潘龙两位同学获得2020年度国家奖学金</title>
-    <link href="https://blinkfox.github.io/2020/12/01/news/zhu-he-bo-shi-sheng-chen-ke-he-shuo-shi-sheng-gu-pan-long-liang-wei-tong-xue-huo-de-2020-nian-du-guo-jia-jiang-xue-jin/"/>
-    <id>https://blinkfox.github.io/2020/12/01/news/zhu-he-bo-shi-sheng-chen-ke-he-shuo-shi-sheng-gu-pan-long-liang-wei-tong-xue-huo-de-2020-nian-du-guo-jia-jiang-xue-jin/</id>
+    <link href="https://cirobot.github.io/2020/12/01/news/zhu-he-bo-shi-sheng-chen-ke-he-shuo-shi-sheng-gu-pan-long-liang-wei-tong-xue-huo-de-2020-nian-du-guo-jia-jiang-xue-jin/"/>
+    <id>https://cirobot.github.io/2020/12/01/news/zhu-he-bo-shi-sheng-chen-ke-he-shuo-shi-sheng-gu-pan-long-liang-wei-tong-xue-huo-de-2020-nian-du-guo-jia-jiang-xue-jin/</id>
     <published>2020-12-01T11:28:00.000Z</published>
     <updated>2022-06-18T16:01:43.804Z</updated>
     
@@ -324,15 +324,15 @@
     
     
     
-    <category term="CIR新闻" scheme="https://blinkfox.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
+    <category term="CIR新闻" scheme="https://cirobot.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>实验室研究生在第十七届中国研究生数学建模竞赛中再创佳绩</title>
-    <link href="https://blinkfox.github.io/2020/11/25/news/shi-yan-shi-yan-jiu-sheng-zai-di-shi-qi-jie-zhong-guo-yan-jiu-sheng-shu-xue-jian-mo-jing-sai-zhong-zai-chuang-jia-ji/"/>
-    <id>https://blinkfox.github.io/2020/11/25/news/shi-yan-shi-yan-jiu-sheng-zai-di-shi-qi-jie-zhong-guo-yan-jiu-sheng-shu-xue-jian-mo-jing-sai-zhong-zai-chuang-jia-ji/</id>
+    <link href="https://cirobot.github.io/2020/11/25/news/shi-yan-shi-yan-jiu-sheng-zai-di-shi-qi-jie-zhong-guo-yan-jiu-sheng-shu-xue-jian-mo-jing-sai-zhong-zai-chuang-jia-ji/"/>
+    <id>https://cirobot.github.io/2020/11/25/news/shi-yan-shi-yan-jiu-sheng-zai-di-shi-qi-jie-zhong-guo-yan-jiu-sheng-shu-xue-jian-mo-jing-sai-zhong-zai-chuang-jia-ji/</id>
     <published>2020-11-25T14:16:00.000Z</published>
     <updated>2022-06-18T16:01:43.804Z</updated>
     
@@ -348,15 +348,15 @@
     
     
     
-    <category term="CIR新闻" scheme="https://blinkfox.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
+    <category term="CIR新闻" scheme="https://cirobot.github.io/categories/CIR%E6%96%B0%E9%97%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>04级-罗晓</title>
-    <link href="https://blinkfox.github.io/2020/11/15/members/students/04-ji-luo-xiao/"/>
-    <id>https://blinkfox.github.io/2020/11/15/members/students/04-ji-luo-xiao/</id>
+    <link href="https://cirobot.github.io/2020/11/15/members/students/04-ji-luo-xiao/"/>
+    <id>https://cirobot.github.io/2020/11/15/members/students/04-ji-luo-xiao/</id>
     <published>2020-11-15T11:28:00.000Z</published>
     <updated>2022-06-18T16:01:43.804Z</updated>
     
@@ -371,17 +371,17 @@
     
     
     
-    <category term="实验室团队" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
+    <category term="实验室团队" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
     
-    <category term="硕博毕业生" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%8D%9A%E6%AF%95%E4%B8%9A%E7%94%9F/"/>
+    <category term="硕博毕业生" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%8D%9A%E6%AF%95%E4%B8%9A%E7%94%9F/"/>
     
     
   </entry>
   
   <entry>
     <title>04级-刘涛</title>
-    <link href="https://blinkfox.github.io/2020/11/15/members/students/04-ji-liu-tao/"/>
-    <id>https://blinkfox.github.io/2020/11/15/members/students/04-ji-liu-tao/</id>
+    <link href="https://cirobot.github.io/2020/11/15/members/students/04-ji-liu-tao/"/>
+    <id>https://cirobot.github.io/2020/11/15/members/students/04-ji-liu-tao/</id>
     <published>2020-11-15T11:01:00.000Z</published>
     <updated>2022-06-18T16:01:43.804Z</updated>
     
@@ -396,17 +396,17 @@
     
     
     
-    <category term="实验室团队" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
+    <category term="实验室团队" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
     
-    <category term="硕博毕业生" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%8D%9A%E6%AF%95%E4%B8%9A%E7%94%9F/"/>
+    <category term="硕博毕业生" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%8D%9A%E6%AF%95%E4%B8%9A%E7%94%9F/"/>
     
     
   </entry>
   
   <entry>
     <title>04级-韩耀振</title>
-    <link href="https://blinkfox.github.io/2020/11/15/members/students/04-ji-han-yao-zhen/"/>
-    <id>https://blinkfox.github.io/2020/11/15/members/students/04-ji-han-yao-zhen/</id>
+    <link href="https://cirobot.github.io/2020/11/15/members/students/04-ji-han-yao-zhen/"/>
+    <id>https://cirobot.github.io/2020/11/15/members/students/04-ji-han-yao-zhen/</id>
     <published>2020-11-15T10:12:00.000Z</published>
     <updated>2022-06-18T16:01:43.804Z</updated>
     
@@ -421,17 +421,17 @@
     
     
     
-    <category term="实验室团队" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
+    <category term="实验室团队" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
     
-    <category term="硕博毕业生" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%8D%9A%E6%AF%95%E4%B8%9A%E7%94%9F/"/>
+    <category term="硕博毕业生" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%8D%9A%E6%AF%95%E4%B8%9A%E7%94%9F/"/>
     
     
   </entry>
   
   <entry>
     <title>03 级-潘为刚</title>
-    <link href="https://blinkfox.github.io/2020/11/15/members/students/03-ji-pan-wei-gang/"/>
-    <id>https://blinkfox.github.io/2020/11/15/members/students/03-ji-pan-wei-gang/</id>
+    <link href="https://cirobot.github.io/2020/11/15/members/students/03-ji-pan-wei-gang/"/>
+    <id>https://cirobot.github.io/2020/11/15/members/students/03-ji-pan-wei-gang/</id>
     <published>2020-11-15T10:08:00.000Z</published>
     <updated>2022-06-18T16:01:43.804Z</updated>
     
@@ -446,17 +446,17 @@
     
     
     
-    <category term="实验室团队" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
+    <category term="实验室团队" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
     
-    <category term="硕博毕业生" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%8D%9A%E6%AF%95%E4%B8%9A%E7%94%9F/"/>
+    <category term="硕博毕业生" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E7%A1%95%E5%8D%9A%E6%AF%95%E4%B8%9A%E7%94%9F/"/>
     
     
   </entry>
   
   <entry>
     <title>薛秉鑫简介</title>
-    <link href="https://blinkfox.github.io/2020/08/31/members/students/xie-bing-xin-jian-jie/"/>
-    <id>https://blinkfox.github.io/2020/08/31/members/students/xie-bing-xin-jian-jie/</id>
+    <link href="https://cirobot.github.io/2020/08/31/members/students/xie-bing-xin-jian-jie/"/>
+    <id>https://cirobot.github.io/2020/08/31/members/students/xie-bing-xin-jian-jie/</id>
     <published>2020-08-31T01:29:00.000Z</published>
     <updated>2022-06-18T16:01:43.789Z</updated>
     
@@ -471,17 +471,17 @@
     
     
     
-    <category term="实验室团队" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
+    <category term="实验室团队" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
     
-    <category term="博士生队伍" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E5%8D%9A%E5%A3%AB%E7%94%9F%E9%98%9F%E4%BC%8D/"/>
+    <category term="博士生队伍" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E5%8D%9A%E5%A3%AB%E7%94%9F%E9%98%9F%E4%BC%8D/"/>
     
     
   </entry>
   
   <entry>
     <title>王志夫简介</title>
-    <link href="https://blinkfox.github.io/2020/08/31/members/students/wang-zhi-fu-jian-jie/"/>
-    <id>https://blinkfox.github.io/2020/08/31/members/students/wang-zhi-fu-jian-jie/</id>
+    <link href="https://cirobot.github.io/2020/08/31/members/students/wang-zhi-fu-jian-jie/"/>
+    <id>https://cirobot.github.io/2020/08/31/members/students/wang-zhi-fu-jian-jie/</id>
     <published>2020-08-31T01:24:00.000Z</published>
     <updated>2022-06-18T16:01:43.789Z</updated>
     
@@ -496,9 +496,9 @@
     
     
     
-    <category term="实验室团队" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
+    <category term="实验室团队" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/"/>
     
-    <category term="博士生队伍" scheme="https://blinkfox.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E5%8D%9A%E5%A3%AB%E7%94%9F%E9%98%9F%E4%BC%8D/"/>
+    <category term="博士生队伍" scheme="https://cirobot.github.io/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%9B%A2%E9%98%9F/%E5%8D%9A%E5%A3%AB%E7%94%9F%E9%98%9F%E4%BC%8D/"/>
     
     
   </entry>
