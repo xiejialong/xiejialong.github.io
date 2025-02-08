@@ -1,3 +1,6 @@
+.author-avatar img {
+  border-radius: 10%;
+}
 .page pre,
 .page .highlight {
   overflow: auto;
