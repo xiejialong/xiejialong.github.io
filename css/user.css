@@ -1,0 +1,126 @@
+.author-avatar img {
+  border-radius: 10%;
+}
+/* 相册容器样式 */
+.album-container {
+  width: 100%;
+  margin: 2rem 0;
+  overflow: hidden;
+  position: relative;
+}
+/* 滚动区域样式 */
+.album-scroll-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.album-scroll {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+/* 相册项样式 - 确保在任何设备上显示3张图片 */
+.album-item {
+  flex: 0 0 calc(100% / 3);
+  min-width: calc(100% / 3);
+  box-sizing: border-box;
+  padding: 0 7.5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.photo-item {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+/* 控制按钮样式 */
+.album-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 15px;
+}
+.album-prev,
+.album-next {
+  padding: 8px 16px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.album-prev:hover,
+.album-next:hover {
+  background: #555;
+}
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .album-item {
+    flex: 0 0 calc(100% / 3);
+    min-width: calc(100% / 3);
+  }
+  .photo-item {
+    height: 150px;
+  }
+}
+@media (max-width: 480px) {
+  .photo-item {
+    height: 120px;
+  }
+}
+/* 相册容器样式 */
+.album-container {
+  width: 100%;
+  margin: 2rem 0;
+  overflow: hidden;
+  position: relative;
+}
+/* 滚动区域样式 */
+.album-scroll-wrapper {
+  position: relative;
+}
+.album-scroll {
+  display: flex;
+  gap: 15px;
+  padding: 10px 0;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+/* 相册项样式 */
+.album-item {
+  flex: 0 0 auto;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.photo-item {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+/* 控制按钮样式 */
+.album-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 15px;
+}
+.album-prev,
+.album-next {
+  padding: 8px 16px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.album-prev:hover,
+.album-next:hover {
+  background: #555;
+}
