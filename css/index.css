@@ -1,5 +1,19 @@
-.author-avatar img {
-  border-radius: 10%;
+.page.artical-container h2 {
+  font-size: 28px !important; /* 临时测试！加 !important 看看是否生效 */
+}
+.page.artical-container p {
+  font-size: 18px !important; /* 临时测试！加 !important 看看是否生效 */
+  line-height: 1.7;
+}
+.page.artical-container ul,
+.page.artical-container ol {
+  font-size: 18px !important;
+}
+.page.artical-container h3 {
+  font-size: 22px !important;
+}
+.page.artical-container h4 {
+  font-size: 20px !important;
 }
 .album-container {
   width: 100%;
@@ -607,7 +621,7 @@ blockquote p {
 }
 @media (min-width: 34em) {
   .page {
-    width: 82.5%;
+    width: 78%;
     float: right;
     margin-right: 0;
   }
@@ -643,9 +657,9 @@ blockquote p {
 }
 .author-avatar img {
   width: 100%;
-  max-width: 110px;
+  max-width: 400px;
   border-radius: 10%;
-  width: 100px;
+  width: 180px;
 }
 .author-discrip {
   display: table-cell;
@@ -818,7 +832,7 @@ blockquote p {
 }
 @media (min-width: 34em) {
   .side-card {
-    width: 15.25424%;
+    width: 19%;
     min-width: 165px;
     float: left;
     margin-right: 1.69492%;
@@ -923,14 +937,112 @@ blockquote p {
   padding-left: 2.5em;
   font-size: 1.28rem;
 }
-@media (min-width: 66.67em) {
-  .footer_wrap {
-    max-width: 1200px;
+/* 针对大型桌面（可选）*/
+@media (max-width: 1500px) {
+  .page article h1 {
+    font-size: 3rem;
+  }
+  .page article h2 {
+    font-size: 2.8rem;
+  }
+  .page article h3 {
+    font-size: 2.6rem;
+  }
+  .page article p {
+    font-size: 1.8rem;
+  }
+  .author-avatar img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10%;
+    width: 150px;
   }
 }
-@media (min-width: 34em) {
-  .footer_wrap {
-    padding: 0 1em 2em;
+/* 针对平板和小型笔记本 */
+@media (max-width: 992px) {
+  .page article h1 {
+    font-size: 2.6rem;
+    margin: 15px 0 10px 0;
+  }
+  .page article h2 {
+    font-size: 2.4rem;
+  }
+  .page article h3 {
+    font-size: 2.2rem;
+  }
+  .page article p {
+    font-size: 2rem;
+    margin: 10px 0 10px 0;
+  }
+  .page article ul {
+    font-size: 2rem;
+    padding-left: 30px;
+  }
+  .page article li {
+    font-size2: 0rem;
+  }
+  .page article li p {
+    margin: 15px 0 15px 0;
+  }
+  .author-avatar img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10%;
+    width: 100px;
+  }
+}
+/* 针对手机和竖屏平板 */
+@media (max-width: 768px) {
+  .page article h1 {
+    font-size: 2.4rem;
+    margin: 12px 0 7px 0;
+  }
+  .page article h2 {
+    font-size: 2.2rem;
+  }
+  .page article h3 {
+    font-size: 2rem;
+  }
+  .page article p {
+    font-size: 1.8rem;
+    margin: 8px 0 8px 0;
+  }
+  .page article ul {
+    font-size: 1.8rem;
+    padding-left: 20px;
+  }
+  .page article li {
+    font-size: 1.8rem;
+  }
+  .page article li p {
+    margin: 12px 0 12px 0;
+  }
+}
+/* 针对小型手机 */
+@media (max-width: 480px) {
+  .page article h1 {
+    font-size: 2.2rem;
+    margin: 10px 0 5px 0;
+  }
+  .page article h2 {
+    font-size: 2rem;
+  }
+  .page article h3 {
+    font-size: 1.8rem;
+  }
+  .page article p {
+    font-size: 1.6rem;
+    margin: 5px 0 5px 0;
+  }
+  .page article ul {
+    font-size: 1.6rem;
+    padding-left: 20px;
+  }
+  .page article li {
+    font-size: 1.6rem;
+  }
+  .page article li p {
+    margin: 10px 0 10px 0;
   }
 }
 .nav-wrap {

@@ -1,5 +1,20 @@
-.author-avatar img {
-  border-radius: 10%;
+.page.artical-container h2 {
+  font-size: 28px !important; /* 临时测试！加 !important 看看是否生效 */
+}
+.page.artical-container p {
+  font-size: 18px !important; /* 临时测试！加 !important 看看是否生效 */
+  line-height: 1.7;
+}
+/* 同样应用于 ul, ol, h3, h4 */
+.page.artical-container ul,
+.page.artical-container ol {
+  font-size: 18px !important;
+}
+.page.artical-container h3 {
+  font-size: 22px !important;
+}
+.page.artical-container h4 {
+  font-size: 20px !important;
 }
 /* 相册容器样式 */
 .album-container {
