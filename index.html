@@ -37,34 +37,52 @@
 <p>（1）设计指代目标图像分割模型，使用Swin Transformer做视觉编码器、RoBERTa做语言编码器，设计语言引导的像素解析模块，在Swin Transformer中实现语言特征融入，结合边界、细节与显著特征实现三元特征融合，构建多任务训练损失；</p>
 <p>（2）微调CLIP模型作为视觉与文本编码器，实现复杂场景下隐式文本-图像对齐特征提取，通过GPT-4生成实体常识知识并设计异构多源知识融合策略，构建高精细度解码器结构，实现混乱场景下的多模态感知。</p>
 <p>（3）为提高少量语言-视觉数据训练的有效性，构建基于课程学习计划的数据增强方案，设计学生-教师知识蒸馏网络，并构建视觉几何一致性正则策略。相关工作整理论文4篇。</p>
-<img src="img/Research/seg.png" />
-
+<div style="text-align: center;">
+    <img src="img/Research/seg.jpg" />
+</div>
 
 </li>
 <li><p><strong>美团机器人研究院科研合作项目：</strong>基于具身智能的混乱场景自适应持续抓取方法研究, 2024.3 - 2025.3.</p>
 <p>主要负责<strong>基于大模型的机器人行为控制与决策代码生成</strong>，主要完成构建大模型-机器人结合的Agent框架，使用GPT-4作为大模型基础构建Prompt工程，将机器人感知信息（目标位置、语音指令等）作为动态输入Prompt、定义机器人API手册作为Tool-Use Prompt并迭代选择Top-K个优秀历史行为数据作为CoT与Memory Prompt，使用GPT-4补充感知目标的常识知识信息并构建场景知识图谱，实现机器人在目标遮挡下的细粒度信息感知和自主目标探索。相关成果整理成了论文1篇。</p>
-<!-- <img src="img/Research/scene4.gif" width="400"/> -->
-
+<div style="text-align: center;">
+    <img src="img/Research/franka.jpg" width="500"/>
+</div>
 
 </li>
 <li><p><strong>济南市“新高校20 条”资助科研带头人工作室项目</strong>：机器人超融合云服务平台实用化关键技术研究（2021GXRC079）, 2022.1.1 - 2024.12.31.</p>
 <p>主要负责<strong>基于ChatGLM的服务机器人故障诊断问答系统构建</strong>，完成设计服务机器人云平台故障诊断智能助手，构建用于的SFT和RLHF阶段的基于Alapace格式的服务机器人故障-问题数据集，并基于GPT-4进行优化和拓展数据集，使用ChatGLM3-6B作为基础大模型，在LLaMA-Fractory平台上对其进行LoRA微调和DPO对齐，实现了服务机器人故障诊断智能问答系统。</p>
 <!-- 运行Demo可以进入网站<a target="_blank" rel="noopener" href="https://cirbot.serveo.net/" style="color: red;">https://cirbot.serveo.net/</a>进行测试。 -->
 
-<img src="img/Research/llm.png" width="400"/>
-
+<div style="text-align: center;">
+    <img src="img/Research/llm.png" width="400"/>
+</div>
 
 </li>
 <li><p><strong>浙江省重点研发计划项目</strong>：面向养老助残任务的刚-柔-软集成协作机器人设计及智能控制（2019C04018）, 2019.9 - 2022.9</p>
 <p>负责<strong>视频动作识别与基于人类反馈的机器人决策生成方案设计</strong>，主要实现视频分析与个性化交互算法设计：</p>
 <p>（1）设计基于视频流的动态头势识别算法，基于Tensorflow构建双流3DCNN网络，实现视频流下的实时动态头势识别，并部署在RTX3060服务器与英伟达Jetson TX2开发板；</p>
 <p>（2）使用头势识别与表情识别作为显式和隐式的奖励函数模型，使用机器人行为模型作为动作空间，通过人类情感反馈训练DQN模型，实现了机器人主动和被动地做出服务决策。相关工作整理成论文2篇。</p>
+  <div style="text-align: center;">
+    <img src="img/Research/pepper.jpg" width="400"/>
+</div>
+
 </li>
 <li><p><strong>企业合作项目：</strong>无人驾驶汽车模拟系统开发, 2020.12 - 2021.6.  </p>
 <p>负责<strong>无人驾驶感知决策方法开发</strong>，主要实现:</p>
 <p>（1）基于松灵底盘搭建无人驾驶平台，基于ROS实现Intel NUC工控机与英伟达Jetson Xavier的双机通讯，其中NUC实现数据采集与预处理，Xavier实现视觉模型推理;</p>
 <p>（2）基于YOLO实现红绿灯、行人等目标数据采集与微调，并在Xavier和ROS进行部署（3）基于C++完成车道线检测，并利用PID、KCF和卡尔曼滤波算法实现车道线跟踪。</p>
-</li>
+<div style="text-align: center;">
+    <img src="img/Research/car.jpg" width="300"/>
+</div></li>
+</ul>
+<h1 id="实习经历-Intern-Experience"><a href="#实习经历-Intern-Experience" class="headerlink" title="实习经历 Intern Experience"></a>实习经历 Intern Experience</h1><ul>
+<li><p><strong>阿里巴巴菜鸟集团</strong>：自动驾驶大模型算法工程师</p>
+<p>（1）跟进最新自动驾驶VLA模型，复现OmniDrive、Orion等VLA架构</p>
+<p>（2）搭建Nuscenes、Bench2Drive等自动驾驶开环和闭环测试环境</p>
+<p>（3）设计基于LLM(VLM)-Diffusion融合架构的VLA模型（提升实时性），针对图像、文本、车辆状态等多模态数据，基于Qwen-3B设计多行为专家的MoE架构行为推理架构，基于不同场景下自适应思维链行为推理方案设计，设计基于diffusion架构的驾驶多模轨迹生成</p>
+<div style="text-align: center;">
+    <img src="img/Research/vla.jpg" width="400"/>
+</div></li>
 </ul>
 <h1 id="荣誉与奖励-Honors-and-Award"><a href="#荣誉与奖励-Honors-and-Award" class="headerlink" title="荣誉与奖励 Honors and Award"></a>荣誉与奖励 Honors and Award</h1><ul>
 <li>第十七届全国数学建模三等奖 2020年</li>
