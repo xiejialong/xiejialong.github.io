@@ -88,9 +88,8 @@
 <h1 id="实习经历-Intern-Experience"><a href="#实习经历-Intern-Experience" class="headerlink" title="实习经历 Intern Experience"></a>实习经历 Intern Experience</h1><ul>
 <li><strong>阿里巴巴菜鸟集团</strong>：自动驾驶大模型算法工程师</li>
 </ul>
-<p>（1）参与自回归架构VLA模型训练：设计prompt和示例样本，通过Qwen2.5VL-72B清洗业务数据，筛选出1w+文本-图像-轨迹复杂多分布的训练数据，使用LoRA微调Qwen2.5VL-7B模型，轨迹精度提升8%，实现业务上线测试；</p>
-<p>（2）针对高速小车实时性要求高和大模型浮点数生成精度不足问题，独立设计VLM+Decoder架构VLA模型：采用InternVL模型作为基座，剪枝其FFN层做快专家，搭建快慢MoE推理架构，提高10% Prefilling速度，构建场景自适应的长短思维链推理，提高20% decode速度。相关创新内容撰写并投稿至 顶会ICLR2026。</p>
-<p>（3）尝试外挂驾驶规则RAG方案提升VLA推理能力，并用VeRL库的GRPO算法优化思维链生成，实现多模轨迹预测。</p>
+<p>（1）针对自动驾驶VLA模型实时性不足和自回归VLA模型浮点数生成精度不足问题，设计VLM+Decoder架构的高效VLA模型：根据能动度、加速度等信息清晰不同难易场景数据，采用InternVL模型作为模型基座，搭建快慢MoE推理架构，利用剪枝技术构建快专家模型，利用思维链长度和驾驶场景信息约束专家选择和router loss，实现自适应的长短思维链推理，提高VLA模型8.6% Prefilling速度和44.1% decode速度；</p>
+<p>尝试外挂驾驶思维链方案使VLA推理速度提升近10倍（~700ms→80ms），并用VeRL库的GRPO算法优化思维链，实现面向不同场景的多模轨迹预测</p>
   <div style="text-align: center;">
       <img src="https://research.xiejialong.top/vla.jpg" width="400"/>
   </div>
