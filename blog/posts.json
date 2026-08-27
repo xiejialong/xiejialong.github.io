@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "pepper-robot-ros-setup",
+    "title": "Pepper 机器人 ROS 开发与使用记录",
+    "date": "2022-02-03",
+    "category": "机器人实践",
+    "tags": [
+      "Pepper",
+      "ROS",
+      "NAOqi",
+      "MoveIt"
+    ],
+    "summary": "记录 Pepper 机器人 NAOqi SDK、ROS 功能包、MoveIt 与常用启动方式的配置过程。",
+    "cover": "./images/image-20210610180935074.png",
+    "origin": "硕士研究生期间学习笔记",
+    "sourceUrl": ""
+  },
+  {
+    "slug": "custom-navigation-algorithm-in-move-base",
+    "title": "在 ROS move_base 中接入自定义导航算法",
+    "date": "2020-10-05",
+    "category": "机器人导航",
+    "tags": [
+      "ROS",
+      "move_base",
+      "pluginlib",
+      "路径规划"
+    ],
+    "summary": "从 nav_core 接口、插件实现到配置编译，记录把自定义路径规划算法接入 move_base 的完整流程。",
+    "cover": "./images/move_base.png",
+    "origin": "硕士研究生期间学习笔记",
+    "sourceUrl": ""
+  },
+  {
+    "slug": "particle-filter-localization-code",
+    "title": "粒子滤波定位代码解析与实践",
+    "date": "2020-07-21",
+    "category": "机器人定位",
+    "tags": [
+      "ROS",
+      "粒子滤波",
+      "蒙特卡罗定位",
+      "C++"
+    ],
+    "summary": "结合 ROS 定位程序梳理粒子滤波的运动更新、测量更新、重采样和参数配置。",
+    "cover": "./images/pf_localization_node.cc.png",
+    "origin": "硕士研究生期间学习笔记",
+    "sourceUrl": ""
+  }
+]

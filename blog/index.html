@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="谢佳龙的机器人、人工智能与工程实践技术笔记。">
+    <meta name="theme-color" content="#1B4F72">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="技术博客 | 谢佳龙">
+    <meta property="og:description" content="谢佳龙的机器人、人工智能与工程实践技术笔记。">
+    <meta property="og:url" content="https://xiejialong.top/blog/">
+    <link rel="canonical" href="https://xiejialong.top/blog/">
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/blog/blog.css">
+    <title>技术博客 | 谢佳龙</title>
+    
+  </head>
+  <body>
+    <header class="blog-hero">
+    <div class="blog-shell">
+      <a class="blog-home-link" href="/">← 返回个人主页</a>
+      <p class="blog-eyebrow">RESEARCH · ENGINEERING · NOTES</p>
+      <h1>技术博客</h1>
+      <p>记录机器人、人工智能与工程实践中的思考、方法和问题解决过程。</p>
+    </div>
+  </header>
+  <main class="blog-shell blog-main">
+    <div class="blog-toolbar">
+      <label class="blog-search"><span>搜索文章</span><input id="blog-search" type="search" placeholder="输入标题、技术或关键词…"></label>
+      <div class="blog-filters" aria-label="文章分类">
+        <button class="is-active" type="button" data-category="全部">全部</button>
+        <button type="button" data-category="机器人实践">机器人实践</button><button type="button" data-category="机器人导航">机器人导航</button><button type="button" data-category="机器人定位">机器人定位</button>
+      </div>
+    </div>
+    <p id="blog-empty" class="blog-empty" hidden>没有找到匹配的文章。</p>
+    <div id="blog-list" class="blog-list"><article class="blog-card" data-category="机器人实践" data-search="pepper 机器人 ros 开发与使用记录 记录 pepper 机器人 naoqi sdk、ros 功能包、moveit 与常用启动方式的配置过程。 机器人实践 pepper ros naoqi moveit">
+      <a class="blog-card__cover" href="/blog/pepper-robot-ros-setup/">
+        <img src="/blog/pepper-robot-ros-setup/images/image-20210610180935074.png" alt="Pepper 机器人 ROS 开发与使用记录" loading="lazy">
+      </a>
+      <div class="blog-card__body">
+        <div class="blog-card__meta"><span>机器人实践</span><time datetime="2022-02-03">2022/02/03</time></div>
+        <h2><a href="/blog/pepper-robot-ros-setup/">Pepper 机器人 ROS 开发与使用记录</a></h2>
+        <p>记录 Pepper 机器人 NAOqi SDK、ROS 功能包、MoveIt 与常用启动方式的配置过程。</p>
+        <div class="blog-card__tags"><span>Pepper</span><span>ROS</span><span>NAOqi</span><span>MoveIt</span></div>
+      </div>
+    </article>
+<article class="blog-card" data-category="机器人导航" data-search="在 ros move_base 中接入自定义导航算法 从 nav_core 接口、插件实现到配置编译，记录把自定义路径规划算法接入 move_base 的完整流程。 机器人导航 ros move_base pluginlib 路径规划">
+      <a class="blog-card__cover" href="/blog/custom-navigation-algorithm-in-move-base/">
+        <img src="/blog/custom-navigation-algorithm-in-move-base/images/move_base.png" alt="在 ROS move_base 中接入自定义导航算法" loading="lazy">
+      </a>
+      <div class="blog-card__body">
+        <div class="blog-card__meta"><span>机器人导航</span><time datetime="2020-10-05">2020/10/05</time></div>
+        <h2><a href="/blog/custom-navigation-algorithm-in-move-base/">在 ROS move_base 中接入自定义导航算法</a></h2>
+        <p>从 nav_core 接口、插件实现到配置编译，记录把自定义路径规划算法接入 move_base 的完整流程。</p>
+        <div class="blog-card__tags"><span>ROS</span><span>move_base</span><span>pluginlib</span><span>路径规划</span></div>
+      </div>
+    </article>
+<article class="blog-card" data-category="机器人定位" data-search="粒子滤波定位代码解析与实践 结合 ros 定位程序梳理粒子滤波的运动更新、测量更新、重采样和参数配置。 机器人定位 ros 粒子滤波 蒙特卡罗定位 c++">
+      <a class="blog-card__cover" href="/blog/particle-filter-localization-code/">
+        <img src="/blog/particle-filter-localization-code/images/pf_localization_node.cc.png" alt="粒子滤波定位代码解析与实践" loading="lazy">
+      </a>
+      <div class="blog-card__body">
+        <div class="blog-card__meta"><span>机器人定位</span><time datetime="2020-07-21">2020/07/21</time></div>
+        <h2><a href="/blog/particle-filter-localization-code/">粒子滤波定位代码解析与实践</a></h2>
+        <p>结合 ROS 定位程序梳理粒子滤波的运动更新、测量更新、重采样和参数配置。</p>
+        <div class="blog-card__tags"><span>ROS</span><span>粒子滤波</span><span>蒙特卡罗定位</span><span>C++</span></div>
+      </div>
+    </article></div>
+  </main>
+  <footer class="blog-footer"><div class="blog-shell"><span>© 2026 谢佳龙</span><a href="/">个人主页</a></div></footer>
+  <script>
+    (() => {
+      const search = document.getElementById('blog-search');
+      const cards = [...document.querySelectorAll('.blog-card')];
+      const buttons = [...document.querySelectorAll('.blog-filters button')];
+      const empty = document.getElementById('blog-empty');
+      let category = '全部';
+      const filter = () => {
+        const query = search.value.trim().toLowerCase();
+        let visible = 0;
+        cards.forEach((card) => {
+          const matchesCategory = category === '全部' || card.dataset.category === category;
+          const matchesQuery = !query || card.dataset.search.includes(query);
+          card.hidden = !(matchesCategory && matchesQuery);
+          if (!card.hidden) visible += 1;
+        });
+        empty.hidden = visible !== 0;
+      };
+      search.addEventListener('input', filter);
+      buttons.forEach((button) => button.addEventListener('click', () => {
+        category = button.dataset.category;
+        buttons.forEach((item) => item.classList.toggle('is-active', item === button));
+        filter();
+      }));
+    })();
+  </script>
+  </body>
+</html>

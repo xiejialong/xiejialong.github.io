@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="从 nav_core 接口、插件实现到配置编译，记录把自定义路径规划算法接入 move_base 的完整流程。">
+    <meta name="theme-color" content="#1B4F72">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="在 ROS move_base 中接入自定义导航算法 | 谢佳龙">
+    <meta property="og:description" content="从 nav_core 接口、插件实现到配置编译，记录把自定义路径规划算法接入 move_base 的完整流程。">
+    <meta property="og:url" content="https://xiejialong.top/blog/custom-navigation-algorithm-in-move-base/">
+    <link rel="canonical" href="https://xiejialong.top/blog/custom-navigation-algorithm-in-move-base/">
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/blog/blog.css">
+    <title>在 ROS move_base 中接入自定义导航算法 | 谢佳龙</title>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"在 ROS move_base 中接入自定义导航算法","description":"从 nav_core 接口、插件实现到配置编译，记录把自定义路径规划算法接入 move_base 的完整流程。","datePublished":"2020-10-05","author":{"@type":"Person","name":"谢佳龙","url":"https://xiejialong.top"},"mainEntityOfPage":"https://xiejialong.top/blog/custom-navigation-algorithm-in-move-base/","keywords":"ROS, move_base, pluginlib, 路径规划"}</script>
+  </head>
+  <body>
+    <header class="article-topbar"><div class="article-shell"><a href="/blog/">← 返回技术博客</a><a href="/">个人主页</a></div></header>
+  <main class="article-shell article-page">
+    <header class="article-header">
+      <p>机器人导航</p>
+      <h1>在 ROS move_base 中接入自定义导航算法</h1>
+      <div><time datetime="2020-10-05">2020/10/05</time><span>硕士研究生期间学习笔记</span></div>
+      <p class="article-summary">从 nav_core 接口、插件实现到配置编译，记录把自定义路径规划算法接入 move_base 的完整流程。</p>
+      <div class="article-tags"><span>ROS</span><span>move_base</span><span>pluginlib</span><span>路径规划</span></div>
+    </header>
+    <article class="article-content"><blockquote>
+<p>本文整理自硕士研究生期间的学习与实践记录，涉及的软件版本和依赖可能已经更新，请结合当前官方文档使用。</p>
+</blockquote>
+<h2>1. move_base的原理</h2>
+<p>ros wiki <a href="http://wiki.ros.org/move_base/" target="_blank" rel="noopener noreferrer">地址</a>。</p>
+<p><img src="./images/move_base.png" alt="move_base"></p>
+<p>move_base包含了基本的全局路径规划、局部路径规划、生成局部消耗地图、局部消耗地图以及行为恢复等功能。通过外界输入的自定位信息、里程计信息、传感器感知信息和地图信息对小车行为进行控制，其中小车最终的控制命令是由local_planner模块发出。</p>
+<h2>2. move_base的接口----<code>nav_core</code></h2>
+<p>ros wiki <a href="http://wiki.ros.org/nav_core?distro=noetic" target="_blank" rel="noopener noreferrer">地址</a>。</p>
+<p><img src="./images/move_base_interfaces.png" alt="move_base_interfaces"></p>
+<p><code>nav_core</code>当前提供了三个C++ API 接口，分别是**<code>BaseGlobalPlanner</code>、<code>BaseLocalPlanner</code>和<code>RecoveryBehavior</code>**接口，通过这三个接口可以重写上图中<code>global_planner</code>、<code>local_planner </code>、和<code>recvovery_behaviors</code>三个功能模块。</p>
+<h2>3. ROS自带的插件</h2>
+<p>ros wiki <a href="http://wiki.ros.org/nav_core?distro=noetic" target="_blank" rel="noopener noreferrer">地址</a>。</p>
+<h4>3.1 全局路径规划插件(继承<code>nav_core::BaseLocalPlanner</code>接口)</h4>
+<ul>
+<li>
+<p><code>global_planner</code></p>
+<blockquote>
+<p>一个快速，内插的全局规划被建立作为一个更灵活去替代<code>navfn</code>功能模块。插件名称：<code>global_planner/GlobalPlanner</code></p>
+</blockquote>
+</li>
+<li>
+<p><code>navfn</code></p>
+<blockquote>
+<p>一个基于栅格的用于机器人路径计算的导航功能全局路径规划模块，现在包括了Dijkstra和A*算法。插件名称：<code>navfn/NavfnROS</code></p>
+</blockquote>
+</li>
+<li>
+<p><code>carrot_planner</code></p>
+<blockquote>
+<p>一个获取用户指定路径目标点并尽可能尝试靠近该目标点的简单全局路径规划，即使目标点是障碍物。插件名称：<code>navfn/NavfnROS</code></p>
+</blockquote>
+</li>
+</ul>
+<h4>3.2 局部路径规划插件(继承<code>nav_core::BaseLocalPlanner</code>接口)</h4>
+<ul>
+<li>
+<p><code>base_local_planner </code></p>
+<blockquote>
+<p>提供了动态窗法(DWA)和航迹平滑法求进行局部控制的功能模型。</p>
+</blockquote>
+</li>
+<li>
+<p><code>dwa_local_planner</code></p>
+<blockquote>
+<p>对于几何机器人，该功能模块提供比<code>base_local_planner </code>的DWA更清晰、更容易理解的接口，以及更灵活的y轴变量的模块化DWA实现。</p>
+</blockquote>
+</li>
+<li>
+<p><code>eband_local_planner</code></p>
+</li>
+<li>
+<p><code>teb_local_planner</code></p>
+</li>
+<li>
+<p><code>mpc_local_planner</code></p>
+</li>
+</ul>
+<h4>3.3 行为恢复插件</h4>
+<ul>
+<li><code>clear_costmap_recovery</code></li>
+<li><code>reotate_reccovery</code></li>
+</ul>
+<h4>3.4 插件的调用</h4>
+<p>对于全局路径规划，只需在move_base的配置launch文件中加入插件名称</p>
+<pre><code class="language-xml">&lt;param name=&quot;base_global_planner&quot; value=&quot;global_planner/GlobalPlanner&quot;/&gt;
+</code></pre>
+<h2>4. 重写插件，加入自己的算法</h2>
+<p>本文参考以下文章：</p>
+<p>a. ROS wiki 对Plugin的介绍以及使用介绍<a href="http://wiki.ros.org/pluginlib" target="_blank" rel="noopener noreferrer">http://wiki.ros.org/pluginlib</a>。</p>
+<p>b. 一个写Astar 插件的github教程<a href="https://github.com/coins-lab/relaxed_astar" target="_blank" rel="noopener noreferrer">https://github.com/coins-lab/relaxed_astar</a>，以及它配套的<a href="https://www.youtube.com/watch?v=We1gGDXAO_o&amp;list=PL93n88K6Qpb63pyaaPaOTudQB30Z2Qn4r" target="_blank" rel="noopener noreferrer">youtube视频链接</a>。</p>
+<p>c. 写一个简单的插件<a href="http://di3renlei.cn/info/2807" target="_blank" rel="noopener noreferrer">http://di3renlei.cn/info/2807</a></p>
+<h4>4.1 创建类的头文件</h4>
+<p>首先，创建的类必须继承父类<a href="http://docs.ros.org/api/nav_core/html/classnav__core_1_1BaseGlobalPlanner.html" target="_blank" rel="noopener noreferrer"><code>nav_core::BaseGlobalPlanner</code></a>，从官方给出的文档可以看出这是一个纯虚类，里面有三个虚函数：</p>
+<ul>
+<li>虚析构函数：<code>~BaseGlobalPlanner()</code></li>
+<li>虚初始化函数：<code>initialize()</code></li>
+<li>虚计算路径函数：<code>makePlan()</code></li>
+</ul>
+<p>我们要构造自己的插件必须重写这几个函数。</p>
+<p>下面是添加插件的最小代码部分，是自己写算法必要和常见的步骤。</p>
+<p>最小头文件定义如下：</p>
+<pre><code class="language-C++">/** include the libraries you need in your planner here */
+ /** for global path planner interface */
+ #include &lt;ros/ros.h&gt;
+ #include &lt;geometry_msgs/PoseStamped.h&gt;
+ #include &lt;costmap_2d/costmap_2d_ros.h&gt;
+ #include &lt;costmap_2d/costmap_2d.h&gt;
+ #include &lt;nav_core/base_global_planner.h&gt;
+
+ using std::string;
+ #ifndef GLOBAL_PLANNER_CPP
+ #define GLOBAL_PLANNER_CPP
+
+ namespace global_planner {
+
+ class GlobalPlanner : public nav_core::BaseGlobalPlanner {
+ public:
+
+  GlobalPlanner();
+  GlobalPlanner(std::string name, costmap_2d::Costmap2DROS* costmap_ros);
+
+  /** overridden classes from interface nav_core::BaseGlobalPlanner **/
+  void initialize(std::string name, costmap_2d::Costmap2DROS* costmap_ros);
+  bool makePlan(const geometry_msgs::PoseStamped&amp; start,
+                const geometry_msgs::PoseStamped&amp; goal,
+                std::vector&lt;geometry_msgs::PoseStamped&gt;&amp; plan
+               );
+  };
+ };
+ #endif
+</code></pre>
+<p><strong>代码解释：</strong></p>
+<p>代码：</p>
+<pre><code class="language-C++"> #include &lt;ros/ros.h&gt;
+ #include &lt;geometry_msgs/PoseStamped.h&gt;
+//以上两个为ros核心库和必要的位置消息类型
+
+ #include &lt;costmap_2d/costmap_2d_ros.h&gt;
+ #include &lt;costmap_2d/costmap_2d.h&gt;
+//以上为costmap的头文件，可以直接调用initialize()函数中的costmap_ros地图信息进行路径规划
+
+ #include &lt;nav_core/base_global_planner.h&gt;
+//该处为接口类头文件，插件必备
+</code></pre>
+<p>代码：</p>
+<pre><code class="language-C++">class GlobalPlanner : public nav_core::BaseGlobalPlanner {
+    //以公共成员类型继承nav_core::BaseGlobalPlanner
+ public:
+
+  GlobalPlanner();
+  GlobalPlanner(std::string name, costmap_2d::Costmap2DROS* costmap_ros);
+
+  /** overridden classes from interface nav_core::BaseGlobalPlanner **/
+  void initialize(std::string name, costmap_2d::Costmap2DROS* costmap_ros);
+    //initialize函数可以调用地图信息，可以完成地图的初始化等工作，该处不能阻塞。
+  bool makePlan(const geometry_msgs::PoseStamped&amp; start,
+                const geometry_msgs::PoseStamped&amp; goal,
+                std::vector&lt;geometry_msgs::PoseStamped&gt;&amp; plan
+               );
+    //定义父类中的虚函数，并重写父类中的虚函数，这步必不可少
+    //最终计划将存储在方法的参数std::vector&lt;geometry_msgs::PoseStamped&gt;&amp; plan
+  };
+</code></pre>
+<h4>4.2 进行类实现</h4>
+<p>该部分对上面头文件的函数进行实现。</p>
+<pre><code class="language-C++">#include &lt;pluginlib/class_list_macros.h&gt;
+#include &quot;global_planner.h&quot;
+
+ //register this planner as a BaseGlobalPlanner plugin
+ PLUGINLIB_EXPORT_CLASS(global_planner::GlobalPlanner, nav_core::BaseGlobalPlanner)
+
+ using namespace std;
+
+ //Default Constructor
+ namespace global_planner {
+
+ GlobalPlanner::GlobalPlanner (){
+
+ }
+
+ GlobalPlanner::GlobalPlanner(std::string name, costmap_2d::Costmap2DROS* costmap_ros){
+   initialize(name, costmap_ros);
+ }
+
+
+ void GlobalPlanner::initialize(std::string name, costmap_2d::Costmap2DROS* costmap_ros){
+
+ }
+
+ bool GlobalPlanner::makePlan(const geometry_msgs::PoseStamped&amp; start, const geometry_msgs::PoseStamped&amp; goal,  std::vector&lt;geometry_msgs::PoseStamped&gt;&amp; plan ){
+
+    plan.push_back(start);
+   for (int i=0; i&lt;20; i++){
+     geometry_msgs::PoseStamped new_goal = goal;
+     tf::Quaternion goal_quat = tf::createQuaternionFromYaw(1.54);
+
+      new_goal.pose.position.x = -2.5+(0.05*i);
+      new_goal.pose.position.y = -3.5+(0.05*i);
+
+      new_goal.pose.orientation.x = goal_quat.x();
+      new_goal.pose.orientation.y = goal_quat.y();
+      new_goal.pose.orientation.z = goal_quat.z();
+      new_goal.pose.orientation.w = goal_quat.w();
+
+   plan.push_back(new_goal);
+   }
+   plan.push_back(goal);
+  return true;
+ }
+ };
+</code></pre>
+<p>有几个重要的事情需要考虑：</p>
+<ul>
+<li>将计划器注册为<code>BaseGlobalPlanner</code>插件：
+<ul>
+<li>通过<code>PLUGINLIB_EXPORT_CLASS(global_planner::GlobalPlanner, nav_core::BaseGlobalPlanner)</code>实现</li>
+<li>所以必需包含<code>#include &lt;pluginlib/class_list_macros.h&gt;</code></li>
+</ul>
+</li>
+</ul>
+<p>在start和goal参数分别用于获得初始位置和目标位置，start一般为机器人自定位位置，goal为机器人收到的目标位置信息。</p>
+<p><strong>代码解释：</strong></p>
+<pre><code class="language-C++">bool GlobalPlanner::makePlan(const geometry_msgs::PoseStamped&amp; start, const geometry_msgs::PoseStamped&amp; goal,  std::vector&lt;geometry_msgs::PoseStamped&gt;&amp; plan ){
+//以上的前两个参数都由movebase自行给定，而plan就是我们计算的路径
+   plan.push_back(start);
+   for (int i=0; i&lt;20; i++){
+     geometry_msgs::PoseStamped new_goal = goal;
+     tf::Quaternion goal_quat = tf::createQuaternionFromYaw(1.54);
+      new_goal.pose.position.x = -2.5+(0.05*i);
+      new_goal.pose.position.y = -3.5+(0.05*i);
+      new_goal.pose.orientation.x = goal_quat.x();
+      new_goal.pose.orientation.y = goal_quat.y();
+      new_goal.pose.orientation.z = goal_quat.z();
+      new_goal.pose.orientation.w = goal_quat.w();
+      plan.push_back(new_goal);
+   }
+   plan.push_back(goal);
+   //通过push_back给容器压入路径信息，这里要特别注意的是，路径信息必须从start到goal，不然局部路径规划会不工作。
+    //上部分可以直接加入自己写的导航算法的函数计算出路径，然后再写入plan。
+  return true;
+ }
+</code></pre>
+<h4>4.3 编译</h4>
+<ul>
+<li>在CmakeList中键入动态连接库，添加以下代码</li>
+</ul>
+<pre><code class="language-cmake">add_library(global_planner_lib src/path_planner/global_planner/global_planner.cpp)
+</code></pre>
+<ul>
+<li>然后，在终端运行catkin_make在catkin工作区目录下生成二进制文件。</li>
+<li>这将在lib目录 <code>~/catkin_ws/devel/lib/</code>中生成<code>libglobal_planner_lib.lib</code>库文件。</li>
+</ul>
+<h4>4.4 编写插件</h4>
+<p>基本上，重要的是<a href="http://wiki.ros.org/pluginlib" target="_blank" rel="noopener noreferrer">按照插件说明页面</a>中所述的创建新插件所需的所有步骤。</p>
+<p>有五个步骤：</p>
+<ul>
+<li>
+<p>插件注册</p>
+<blockquote>
+<p>首先，您需要通过导出将全局计划程序类注册为插件。为了允许类被动态加载，它必须被标记为导出类。</p>
+<p>这是通过特殊宏<code>PLUGINLIB_EXPORT_CLASS</code>来完成的。</p>
+<p>这个宏可以放在构成插件库的任何源（.cpp）文件中，但通常放在导出类的.cpp文件的末尾。</p>
+<p>这已经在<code>global_planner.cpp</code>中用指令完成了。</p>
+<p>示例：</p>
+<pre><code>PLUGINLIB_EXPORT_CLASS(global_planner::GlobalPlanner, nav_core::BaseGlobalPlanner)
+</code></pre>
+<p>这将使<code>global_planner::GlobalPlanner</code>类注册为move_base的<code>nav_core::BaseGlobalPlanner</code>的插件</p>
+</blockquote>
+</li>
+<li>
+<p>插件说明文件</p>
+<blockquote>
+<p>第二步是在描述文件中描述插件。</p>
+<p>插件描述文件是一个XML文件，用于以机器可读格式存储有关插件的所有重要信息。</p>
+<p>它包含有关插件所在的库的信息，插件的名称，插件的类型等。</p>
+<p>在我们的全局计划程序的情况下，您需要创建一个新文件并将其保存在包中的特定位置我们的例子global_planner包），并给它一个名称，例如<code>global_planner_plugin.xml</code>。</p>
+<p>插件描述文件（<code>global_planner_plugin.xml</code>）的内容如下所示：</p>
+<pre><code> &lt;library path=&quot;lib/libglobal_planner_lib&quot;&gt;
+  &lt;class name=&quot;global_planner/GlobalPlanner&quot; type=&quot;global_planner::GlobalPlanner&quot; base_class_type=&quot;nav_core::BaseGlobalPlanner&quot;&gt;
+    &lt;description&gt;This is a global planner plugin by iroboapp project.&lt;/description&gt;
+  &lt;/class&gt;
+ &lt;/library&gt;
+</code></pre>
+<p>在第一行<code>&lt;library path =“lib / libglobal_planner_lib”&gt;</code>中，我们指定了插件库的路径。</p>
+<p>在这种情况下，路径是<code>lib/libglobal_planner_lib</code>，其中lib是目录 ~/catkin_ws/devel/中的文件夹（请参阅上面的编译部分）。</p>
+<p>在此行 中,我们首先指定global_planner插件的名称，稍后我们将在move_base启动文件中用作参数,它指定要在nav_core中使用的全局计划器。</p>
+<p>通常使用命名空间（global_planner），后跟/斜杠，然后使用类的名称（ GlobalPlanner）来指定插件的名称。</p>
+<p>如果不指定名称，则名称将等于类型，在这种情况下将是 <code>global_planner::GlobalPlanner</code>。</p>
+<p>它建议指定名称以避免混淆。</p>
+<p>该type指定实现插件的名称，我们示例里是，类<code>global_planner::GlobalPlanner</code>，而该base_class_type指定实现插件名称的基类，我们示例里是，基类<code>nav_core::BaseGlobalPlanner</code>。</p>
+<p>在 标签提供有关该插件的简要说明。</p>
+<p>有关插件描述文件及其相关标签/属性的详细描述，<a href="http://wiki.ros.org/pluginlib/PluginDescriptionFile" target="_blank" rel="noopener noreferrer">请参阅以下文档</a>。</p>
+<p>为什么我们需要此文件？</p>
+<ul>
+<li>我们需要这个文件除了代码宏，允许ROS系统自动发现，加载和解释插件。</li>
+<li>插件描述文件还包含重要信息，如插件的描述，不适合在宏中。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>使用ROS包系统注册插件</p>
+<blockquote>
+<p>为了让pluginlib查询跨所有ROS包的系统上的所有可用插件，每个包必须显式指定它导出的插件和哪些包库包含这些插件。插件提供程序必须在package.xml中指向其export标记块中的插件描述文件。注意，如果您有其他导出，他们都必须在同一导出字段。在我们的全局计划器示例中，相关行将如下所示：</p>
+<pre><code class="language-xml"> &lt;export&gt;
+  &lt;nav_core plugin=&quot;${prefix}/global_planner_plugin.xml&quot; /&gt;
+ &lt;/export&gt;
+</code></pre>
+<p>在${prefix}/将自动确定的完整路径文件global_planner_plugin.xml。有关导出插件的详细说明，<a href="http://wiki.ros.org/pluginlib/PluginExport" target="_blank" rel="noopener noreferrer">请参阅以下文档</a>重要说明：为了使上述export命令正常工作，提供包必须直接依赖于包含插件接口的包，在全局计划器的情况下为nav_core。因此，global_planner包必须在其package.xml中包含以下行：</p>
+<pre><code class="language-xml">&lt;build_depend&gt;nav_core&lt;/build_depend&gt;
+&lt;run_depend&gt;nav_core&lt;/run_depend&gt;
+</code></pre>
+<p>这将告诉编译器关于nav_core包的依赖</p>
+</blockquote>
+</li>
+<li>
+<p>查询ROS包系统可用的插件</p>
+<blockquote>
+<p>可以通过rospack查询ROS包系统，以查看任何给定包可用的插件。例如：</p>
+</blockquote>
+<pre><code>rospack plugins --attrib = plugin nav_core
+</code></pre>
+<blockquote>
+<p>这将返回从nav_core包导出的所有插件。这里是一个执行的例子：</p>
+</blockquote>
+<pre><code>akoubaa@anis-vbox:~/catkin_ws$ rospack plugins --attrib=plugin nav_core
+ rotate_recovery /opt/ros/hydro/share/rotate_recovery/rotate_plugin.xml
+ navfn /opt/ros/hydro/share/navfn/bgp_plugin.xml
+ base_local_planner /opt/ros/hydro/share/base_local_planner/blp_plugin.xml
+ move_slow_and_clear /opt/ros/hydro/share/move_slow_and_clear/recovery_plugin.xml
+ global_planner /home/akoubaa/catkin_ws/src/global_planner/global_planner_plugin.xml
+ dwa_local_planner /opt/ros/hydro/share/dwa_local_planner/blp_plugin.xml
+ clear_costmap_recovery /opt/ros/hydro/share/clear_costmap_recovery/ccr_plugin.xml
+ carrot_planner /opt/ros/hydro/share/carrot_planner/bgp_plugin.xml
+</code></pre>
+<blockquote>
+<p>观察我们的插件现在可以在包global_planner下获得并且在文件/home/akoubaa/catkin_ws/src/global_planner/global_planner_plugin.xml中指定。您还可以观察nav_core包中现有的其他插件，包括carrot_planner/CarrotPlanner和navfn，其实现Dijkstra算法。现在，你的插件就可以使用了。</p>
+</blockquote>
+</li>
+<li>
+<p>最后在move_base配置文件中调用</p>
+</li>
+</ul>
+<pre><code class="language-xml">&lt;launch&gt;
+	&lt;node pkg=&quot;move_base&quot; type=&quot;move_base&quot; respawn=&quot;false&quot; name=&quot;move_base&quot; output=&quot;screen&quot; clear_params=&quot;true&quot;&gt;
+		&lt;param name=&quot;base_global_planner&quot; value=&quot;global_planner/GlobalPlaner&quot;/&gt;
+	&lt;/node&gt;
+
+&lt;/launch&gt;
+</code></pre>
+<h2>5. 把A*写成插件后的效果</h2>
+<p><img src="./images/image-20201005205053345.png" alt="image-20201005205053345"></p>
+</article>
+    
+    <nav class="article-bottom"><a href="/blog/">查看更多技术文章</a><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">回到顶部 ↑</a></nav>
+  </main>
+  </body>
+</html>

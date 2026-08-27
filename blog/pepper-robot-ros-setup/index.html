@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="记录 Pepper 机器人 NAOqi SDK、ROS 功能包、MoveIt 与常用启动方式的配置过程。">
+    <meta name="theme-color" content="#1B4F72">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Pepper 机器人 ROS 开发与使用记录 | 谢佳龙">
+    <meta property="og:description" content="记录 Pepper 机器人 NAOqi SDK、ROS 功能包、MoveIt 与常用启动方式的配置过程。">
+    <meta property="og:url" content="https://xiejialong.top/blog/pepper-robot-ros-setup/">
+    <link rel="canonical" href="https://xiejialong.top/blog/pepper-robot-ros-setup/">
+    <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/blog/blog.css">
+    <title>Pepper 机器人 ROS 开发与使用记录 | 谢佳龙</title>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Pepper 机器人 ROS 开发与使用记录","description":"记录 Pepper 机器人 NAOqi SDK、ROS 功能包、MoveIt 与常用启动方式的配置过程。","datePublished":"2022-02-03","author":{"@type":"Person","name":"谢佳龙","url":"https://xiejialong.top"},"mainEntityOfPage":"https://xiejialong.top/blog/pepper-robot-ros-setup/","keywords":"Pepper, ROS, NAOqi, MoveIt"}</script>
+  </head>
+  <body>
+    <header class="article-topbar"><div class="article-shell"><a href="/blog/">← 返回技术博客</a><a href="/">个人主页</a></div></header>
+  <main class="article-shell article-page">
+    <header class="article-header">
+      <p>机器人实践</p>
+      <h1>Pepper 机器人 ROS 开发与使用记录</h1>
+      <div><time datetime="2022-02-03">2022/02/03</time><span>硕士研究生期间学习笔记</span></div>
+      <p class="article-summary">记录 Pepper 机器人 NAOqi SDK、ROS 功能包、MoveIt 与常用启动方式的配置过程。</p>
+      <div class="article-tags"><span>Pepper</span><span>ROS</span><span>NAOqi</span><span>MoveIt</span></div>
+    </header>
+    <article class="article-content"><blockquote>
+<p>本文整理自硕士研究生期间的学习与实践记录，涉及的软件版本和依赖可能已经更新，请结合当前官方文档使用。</p>
+</blockquote>
+<ol>
+<li>下载Aldebaran NAOqi SDK</li>
+</ol>
+<p><a href="https://www.softbankrobotics.com/emea/en/support/pepper-naoqi-2-9/downloads-softwares/former-versions?os=49&amp;category=108" target="_blank" rel="noopener noreferrer">下载链接</a></p>
+<p><img src="./images/image-20210610180935074.png" alt="image-20210610180935074"></p>
+<ol start="2">
+<li>
+<p>配置安装Aldebaran NAOqi SDK</p>
+<p>ROS官方文档<a href="http://wiki.ros.org/nao/Tutorials/Installation#NAOqi" target="_blank" rel="noopener noreferrer">http://wiki.ros.org/nao/Tutorials/Installation#NAOqi</a></p>
+<ul>
+<li>
+<p>解压下载的文档</p>
+<pre><code class="language-shell">mkdir ~/naoqi
+
+cp ~/Downloads/naoqi-sdk-2.5.7.1-linux64.tar ~/Downloads/pynaoqi-python2.7-2.5.7.1-linux64.tar ~/naoqi
+
+cd ~/naoqi
+
+tar xzf aoqi-sdk-2.5.7.1-linux64.tar
+
+tar xzf pynaoqi-python2.7-2.5.7.1-linux64.tar
+</code></pre>
+</li>
+<li>
+<p>配置.bashrc，与官方介绍不同</p>
+<pre><code class="language-shell">sudo gedit ~/.bashrc
+</code></pre>
+<p>加入下面内容</p>
+<pre><code class="language-shell">export PYTHONPATH=${PYTHONPATH}:~/naoqi/pynaoqi-python2.7-2.5.7.1-linux64/lib/python2.7/site-packages
+</code></pre>
+</li>
+<li>
+<p>测试，终端打开python</p>
+<pre><code class="language-python">from naoqi import ALProxy
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>下载pepper的ros包，照着ros官网的流程</p>
+<p><a href="http://wiki.ros.org/pepper/Tutorials" target="_blank" rel="noopener noreferrer">http://wiki.ros.org/pepper/Tutorials</a></p>
+</li>
+<li>
+<p>启动机器人，平时连接启动机器人,该状态下机器人可自由活动</p>
+</li>
+</ol>
+<pre><code class="language-bash">roslaunch pepper_bringup pepper_full.launch nao_ip:=192.168.31.236 roscore_ip:=192.168.31.111
+</code></pre>
+<p>启动机器人和moveit，可与上面的代码一起启动**<a href="https://github.com/ros-naoqi/pepper_dcm_robot" target="_blank" rel="noopener noreferrer">pepper_dcm_robot</a>**</p>
+<pre><code class="language-bash">roslaunch pepper_dcm_bringup pepper_bringup.launch
+roslaunch pepper_moveit_config moveit_planner.launch
+</code></pre>
+<p>启动传感器信息，其中获取的摄像头信息实时性更高</p>
+<pre><code class="language-bash">roslaunch pepper_sensors_py camera.launch
+</code></pre>
+<p><strong>报错解决</strong></p>
+<ol>
+<li>报错：[ERROR] [1604989480.428739559]: Could not load controller '/pepper_dcm/joint_state_controller' because controller type 'joint_state_controller/JointStateController' does not exist.</li>
+</ol>
+<pre><code class="language-bash">sudo apt-get update
+sudo apt-get install ros-kinetic-joint-state-controller
+rospack profile
+</code></pre>
+<ol start="2">
+<li>报错：Could not load controller '/pepper_dcm/Pelvis_controller' because controller type 'position_controllers/JointTrajectoryController' does not exist.</li>
+</ol>
+<pre><code class="language-bash">sudo apt-get install ros-kinetic-position-controllers
+sudo apt-get install ros-kinetic-joint-trajectory-controller
+</code></pre>
+<ol start="3">
+<li>pepper的驱动包在ARM架构的cpu下不能编译通过，无法解决</li>
+</ol>
+<p>ROS官网资料</p>
+<p><a href="http://wiki.ros.org/pepper" target="_blank" rel="noopener noreferrer">http://wiki.ros.org/pepper</a></p>
+</article>
+    
+    <nav class="article-bottom"><a href="/blog/">查看更多技术文章</a><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">回到顶部 ↑</a></nav>
+  </main>
+  </body>
+</html>
